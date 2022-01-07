@@ -19,6 +19,8 @@ const Homepage = () => {
   
   console.log(data);
 
+  if (isFetching) return <Loader />;
+
   return (
     <>
        <Title level={2} className="heading">Global Crypto Stats</Title>
