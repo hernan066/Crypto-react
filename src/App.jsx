@@ -12,7 +12,7 @@ const App = () => {
         <Navbar />
       </div>
       <div className="main">
-        <Layout>
+        <Layout style={{padding: '20px'}}>
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
