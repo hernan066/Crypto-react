@@ -31,21 +31,19 @@ const Navbar = () => {
     <div className="nav-container">
       <div className="logo-container">
         <Avatar src={icon} size="large" />
-        <Typography.Title level={2} className="logo"><Link to="/">Cryptoverse</Link></Typography.Title>
+        <Typography.Title level={2} className="logo"><Link to="/">Cryptoreact</Link></Typography.Title>
         <Button className="menu-control-container" onClick={() => setActiveMenu(!activeMenu)}><MenuOutlined /></Button>
       </div>
       {activeMenu && (
       <Menu theme="dark">
-        <Menu.Item icon={<HomeOutlined />}>
+        <Menu.Item key={1} icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>
-        <Menu.Item icon={<FundOutlined />}>
+        <Menu.Item key={2} icon={<FundOutlined />}>
           <Link to="/cryptocurrencies">Cryptocurrencies</Link>
         </Menu.Item>
-        <Menu.Item icon={<MoneyCollectOutlined />}>
-          <Link to="/exchanges">Exchanges</Link>
-        </Menu.Item>
-        <Menu.Item icon={<BulbOutlined />}>
+        
+        <Menu.Item key={3} icon={<BulbOutlined />}>
           <Link to="/news">News</Link>
         </Menu.Item>
       </Menu>

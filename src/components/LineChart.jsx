@@ -33,26 +33,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     ],
   };
 
-  const options = {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-          },
-        },
-      ],
-    },
-  };
-  /* console.log(coinHistory)
-  console.log(new Date(coinHistory?.data?.history[0].timestamp).toLocaleDateString())
-  console.log(coinHistory?.data?.history[0].timestamp)
-  console.log(coinHistory?.data?.history[1].timestamp)
-  console.log(new Date(coinHistory?.data?.history[0].timestamp))
-  console.log(new Date(coinHistory?.data?.history[1].timestamp))
-  console.log(new Date(1641664500*1000))
-  console.log(Date.now())
- */
+   
   return (
     <>
       <Row className="chart-header">
@@ -68,7 +49,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           </Title>
         </Col>
       </Row>
-      <Line data={data} options={options} />
+      <Line data={data}  />
     </>
   );
 };

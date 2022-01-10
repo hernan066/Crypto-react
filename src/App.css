@@ -35,6 +35,9 @@ a:hover{
    
     
 }
+
+
+
 .routes{
     padding: 20px;
 }
@@ -135,6 +138,10 @@ a:hover{
         font-size: 1.3rem !important;
     }
 }
+
+
+
+
 
 .coin-detail-container{
     margin: 30px;
@@ -379,3 +386,5 @@ width: 70%;
     padding: 20px;
     align-items: center;
 }
+
+
