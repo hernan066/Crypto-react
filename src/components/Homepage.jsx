@@ -17,7 +17,7 @@ const Homepage = () => {
   if (isFetching) return <Loader />; 
 
   
-  console.log(data);
+  //console.log(data);
 
   if (isFetching) return <Loader />;
 

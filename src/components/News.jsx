@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Select, Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
+import { v4 as uuidv4 } from 'uuid';
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
@@ -22,7 +23,7 @@ const News = ({ simplified }) => {
 
   if (!cryptoNews?.value) return <Loader />;
 
-  console.log(cryptoNews);
+  //console.log(cryptoNews);
 
   return (
     <>
@@ -46,7 +47,7 @@ const News = ({ simplified }) => {
           >
             <Option value="Cryptocurency">Cryptocurrency</Option>
             {data?.data?.coins?.map((currency) => (
-              <Option value={currency.name}>{currency.name}</Option>
+              <Option value={currency.name} key={uuidv4()}>{currency.name}</Option>
             ))}
           </Select>
         </Col>

@@ -8,6 +8,7 @@ import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCi
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi';
 import Loader from './Loader';
 import LineChart from './LineChart';
+import { v4 as uuidv4 } from 'uuid';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -19,9 +20,9 @@ const CryptoDetails = () => {
   const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
   const cryptoDetails = data?.data?.coin;
 
-  console.log(cryptoDetails);
+  /* console.log(cryptoDetails);
   console.log(timeperiod);
-  console.log(coinHistory?.data?.history);
+  console.log(coinHistory?.data?.history); */
 
   if (isFetching) return <Loader />;
 
@@ -62,7 +63,7 @@ const CryptoDetails = () => {
             <p>An overview showing the statistics of {cryptoDetails.name}, such as the base and quote currency, the rank, and trading volume.</p>
           </Col>
           {stats.map(({ icon, title, value }) => (
-            <Col className="coin-stats" >
+            <Col className="coin-stats" key={uuidv4()}>
               <Col className="coin-stats-name">
                 <Text>{icon}</Text>
                 <Text>{title}</Text>
@@ -77,7 +78,7 @@ const CryptoDetails = () => {
             <p>An overview showing the statistics of {cryptoDetails.name}, such as the base and quote currency, the rank, and trading volume.</p>
           </Col>
           {genericStats.map(({ icon, title, value }) => (
-            <Col className="coin-stats" >
+            <Col className="coin-stats" key={uuidv4()} >
               <Col className="coin-stats-name">
                 <Text>{icon}</Text>
                 <Text>{title}</Text>
@@ -95,7 +96,7 @@ const CryptoDetails = () => {
         <Col className="coin-links">
           <Title level={3} className="coin-details-heading">{cryptoDetails.name} Links</Title>
           {cryptoDetails.links?.map((link) => (
-            <Row className="coin-link" key={link.name}>
+            <Row className="coin-link" key={uuidv4()}>
               <Title level={5} className="link-name">{link.type}</Title>
               <a href={link.url} target="_blank" rel="noreferrer">{link.name}</a>
             </Row>

@@ -18,7 +18,7 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptos(filteredData);
   }, [cryptoList, searchTerm]);
 
-  console.log(cryptos);
+  //console.log(cryptos);
 
   return (
     <>
